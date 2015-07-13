@@ -7,6 +7,8 @@ require 'ostruct'
 require 'date'
 
 class BackupJob
+
+  VERSION = 0.1
   
   # expects pgpass set for effektive userid
   #
@@ -23,9 +25,7 @@ class BackupJob
   private
 
   def process
-    puts @options.database
-    puts @options.user
-
+    puts "running version: #{VERSION}"
     system dump_cmd
   end
 
